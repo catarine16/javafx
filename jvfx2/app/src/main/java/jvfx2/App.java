@@ -3,11 +3,15 @@
  */
 package jvfx2;
 
-import java.awt.Button;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.layout.StackPane;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -21,10 +25,33 @@ public class App extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 	primaryStage.setTitle("Esse é o meu Palco");
-    Button button = new Button();
-     button.setText("my button");
-     StackPane stackPane = new StackPane();
-     primaryStage.setScene(new Scene (stackPane,800,600));
-     primaryStage.show();
+	VBox vbox = new VBox();
+	
+	Text usernameLabel = new Text();
+    usernameLabel.setText("Username:");
+    vbox.getChildren().add(usernameLabel);
+	
+  
+	TextField userField = new TextField();
+	userField.setText("");
+	vbox.getChildren().add(userField);
+	
+	Text passowordLabel = new Text();
+	passowordLabel.setText("Senha:");
+	vbox.getChildren().add(passowordLabel);
+	
+	TextField senhaField = new TextField();
+	senhaField.setText ("");
+	vbox.getChildren().add(senhaField);
+   
+	 Button button = new Button();
+    button.setText("ENTRAR");
+    
+    
+    vbox.getChildren().add(button);
+    
+    primaryStage.setScene(new  Scene(vbox,800,600));
+    primaryStage.show();
+ 
 	}
 }
